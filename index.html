@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="projeto.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: whitesmoke;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, darkmagenta, #333);
+            color: white;
+            border-bottom-style: solid;
+            border-bottom-color: darkmagenta;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color:rgb(255, 255, 255);
+        }
+
+        .span1 {
+            color: greenyellow;
+            font-size: 16px;
+            padding-left: 2px;
+
+        }
+
+        .span2 {
+            color: yellow;
+            font-size: 16px;
+
+        }
+
+        .menu {
+            border-radius: 5px;
+        }
+
+
+        nav {
+            position: relative;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+        }
+        nav ul li:hover > a {
+            background-color: #3b2525;
+            border-radius: 5px;
+        }
+        nav ul li ul {
+            display: none;
+            position: relative;
+            top: 100%;
+            left: 0;
+            background-color: #3b2525;
+            padding: 10px;
+            z-index: 1000;
+            border-radius: 5px;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            margin: 5px 0;
+        }
+        
+    .center1 {
+        position: absolute;
+        top: 0;
+        right: 550px;
+        border-left-style: solid;
+        border-left-color:#a1a1a1;
+        border-left-width: 2px;
+        border-right-style: solid;
+        border-right-color:#a1a1a1;
+        border-right-width: 2px;
+        z-index: 1000;
+    }
+
+    .center2 {
+        z-index: 1000;
+        position: relative;
+        top: 0;
+        right: 550px;
+    }
+
+    .center3 {
+        z-index: 1000;
+        position: relative;
+        top: 0;
+        right: 550px;
+    }
+    .box {
+            background-color: #333; /* Cor de fundo da caixa */
+            padding: 20px;
+            border-radius: 10px; /* Cantos arredondados */
+            box-shadow: 0 4px 20px gray; /* Sombra da caixa */
+            width: 600px; /* Largura da caixa */
+            text-align: center; /* Centralizar texto */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+            position: relative;
+            top: 20px;
+            left: 440px;
+        }
+        .box:hover {
+            transform: translateY(-5px); /* Move a caixa para cima ao passar o mouse */
+            box-shadow: 0 8px 30px black; /* Sombra mais intensa ao passar o mouse */
+        }
+        .title {
+            font-size: 24px;
+            margin: 0 0 10px;
+            color: whitesmoke;
+        }
+        .description {
+            font-size: 16px;
+            margin: 0 0 20px;
+            color: #666;
+        }
+        .button {
+            background-color: #4CAF50; /* Cor do botão */
+            color: white; /* Cor do texto do botão */
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px; /* Cantos arredondados do botão */
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transição suave para a cor do botão */
+        }
+        .button:hover {
+            background-color: #45a049; /* Cor do botão ao passar o mouse */
+        }
+
+        table {
+            position: relative;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white; /* Cor de fundo da tabela */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra da tabela */
+            bottom: 10px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd; /* Linha de separação */
+        }
+        th {
+            background-color: #4CAF50; /* Cor do cabeçalho */
+            color: white; /* Cor do texto do cabeçalho */
+        }
+        tr:hover {
+            background-color: #f1f1f1; /* Efeito hover nas linhas */
+        }
+
+        [data-tooltip] {
+            position: relative;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+            padding-left: 4px;
+        }
+
+        [data-tooltip]:after {
+            display: none;
+            position: absolute;
+            top: -5px;
+            padding: 5px;
+            border-radius: 3px;
+            top: calc(100% + 2px);
+            content: attr(data-tooltip);
+            white-space: nowrap;
+            background-color: #0095ff;
+            color: White;
+        }
+
+        [data-tooltip]:hover:after {
+            display: block;
+        }
+
+        section {
+            padding: 80px 20px;
+            margin-top: 60px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+        }
+
+        h3 {
+            position: relative;
+            color: white;
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 10px;
+            background: linear-gradient(to top, darkmagenta, #333);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        h3:hover {
+            color: #ffffff;
+            background: linear-gradient(90deg, #007BFF, #0056b3);
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.5);
+            cursor:help;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+            transition: color 0.2s;
+        }
+        h3:hover + p {
+            color: #555;
+        }
+
+        .chart {
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .efeito {
+            font-size: 100px;
+            position: relative;
+            left: 750px;
+            bottom: 40px;
+        }
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">Poluição<em><span class="span1">M</span></em><em><span class="span2">T</span></em></div>
+        <nav>
+            <ul class="center1">
+                <li><a href="#home">Início</a></li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                    <ul class="center2">
+                        <p><a href="#equipe">Produção</a></p>
+                        <p><a href="#historia">a</a></p>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#servicos">Serviços</a>
+                    <ul class="center3">
+                        <p><a href="#consultoria">a</a></p>
+                        <p><a href="#desenvolvimento">o</a></p>
+                    </ul>
+                </li>
+                <ul>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h3>
+        Observações
+    </h3>
+    <span class="efeito">-</span>
+    <div class="box">
+        <h2 class="title">Dados sobre poluição em 2024</h2>
+        <p class="description"><table>
+            <thead>
+                <tr>
+                    <th>Cidade</th>
+                    <th>Nível de Poluição<span data-tooltip="Índice de qualidade do ar">(AQI)</span></th>
+                    <th>Fonte Principal de Poluição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>São Paulo</td>
+                    <td>150</td>
+                    <td>Transporte</td>
+                </tr>
+                <tr>
+                    <td>Rio de Janeiro</td>
+                    <td>120</td>
+                    <td>Indústria</td>
+                </tr>
+                <tr>
+                    <td>Belo Horizonte</td>
+                    <td>130</td>
+                    <td>Construção Civil</td>
+                </tr>
+                <tr>
+                    <td>Curitiba</td>
+                    <td>95</td>
+                    <td>Transporte</td>
+                </tr>
+                <tr>
+                    <td>Salvador</td>
+                    <td>110</td>
+                    <td>Resíduos Sólidos</td>
+                </tr>
+                <tr>
+                    <td>Fortaleza</td>
+                    <td>85</td>
+                    <td>Transporte</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="button">Clique Aqui</button>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script>
+    const ctx = document.getElementById('pollutionChart').getContext('2d');
+    const pollutionChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['CO2', 'NOx', 'SO2', 'PM2.5', 'O3'],
+            datasets: [{
+                label: 'Emissões de Poluentes (mg/m³)',
+                data: [400, 50, 20, 10, 30],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+</script>
+</body>
+</html>
